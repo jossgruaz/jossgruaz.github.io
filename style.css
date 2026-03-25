@@ -15,7 +15,8 @@ body {
     background: #0a0f14;
     color: #f8f8f8;
     font-family: 'Orbitron', sans-serif;
-    padding-bottom: 8rem; /* more space between content and footer */
+    padding-bottom: 8rem;
+    /* more space between content and footer */
 }
 
 /* -------------------- BACKGROUND EFFECTS -------------------- */
@@ -170,10 +171,13 @@ main {
 
 .billetterie:hover,
 .lineup:hover {
-    background-color: rgba(251, 146, 60, 0.15); /* slightly brighter */
-    border-color: rgba(251, 146, 60, 0.6); /* more visible */
+    background-color: rgba(251, 146, 60, 0.15);
+    /* slightly brighter */
+    border-color: rgba(251, 146, 60, 0.6);
+    /* more visible */
     cursor: pointer;
-    transform: translateY(-2px) scale(1.02); /* subtle lift */
+    transform: translateY(-2px) scale(1.02);
+    /* subtle lift */
 }
 
 .dot {
@@ -228,15 +232,20 @@ main {
 }
 
 .sound-btn:hover {
-    background-color: rgba(34, 211, 238, 0.1); /* subtle glow effect */
+    background-color: rgba(34, 211, 238, 0.1);
+    /* subtle glow effect */
     border-color: rgba(34, 211, 238, 0.6);
     cursor: pointer;
-    transform: translateY(-2px) scale(1.02); /* subtle lift */
+    transform: translateY(-2px) scale(1.02);
+    /* subtle lift */
 }
+
 /* -------------------- FOOTER -------------------- */
 footer {
-    position: fixed;       /* always visible */
-    bottom: 0;             /* stick to bottom */
+    position: fixed;
+    /* always visible */
+    bottom: 0;
+    /* stick to bottom */
     left: 0;
     width: 100%;
     text-align: center;
@@ -350,7 +359,8 @@ footer {
 
 /* Hover effect: subtle glow like your buttons */
 .link-highlight:hover {
-    color: #fb923c; /* slightly brighter */
+    color: #fb923c;
+    /* slightly brighter */
     text-shadow: 0 0 6px rgba(251, 146, 60, 0.6), 0 0 12px rgba(251, 146, 60, 0.3);
 }
 
@@ -448,13 +458,15 @@ footer {
     .tagline {
         font-size: 1.8rem;
         letter-spacing: 0.2em;
-        text-align: center; /* optional but looks better */
+        text-align: center;
+        /* optional but looks better */
     }
 
     /* Each word on its own line */
     .tagline span {
         display: block;
-        margin: 5px 0; /* spacing between lines */
+        margin: 5px 0;
+        /* spacing between lines */
     }
 
     /* Hide the dots */
@@ -469,6 +481,16 @@ footer {
     .billetterie span,
     .lineup span {
         font-size: 0.85rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buttons a {
+        width: 100%;
+        text-align: center;
     }
 
     .sound-btn {
