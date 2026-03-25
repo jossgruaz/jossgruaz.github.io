@@ -448,6 +448,18 @@ footer {
     .tagline {
         font-size: 1.8rem;
         letter-spacing: 0.2em;
+        text-align: center; /* optional but looks better */
+    }
+
+    /* Each word on its own line */
+    .tagline span {
+        display: block;
+        margin: 5px 0; /* spacing between lines */
+    }
+
+    /* Hide the dots */
+    .separator {
+        display: none;
     }
 
     .lineup-day {
