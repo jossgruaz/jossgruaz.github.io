@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bizingue</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+
+  <!-- Your external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <canvas id="particles"></canvas>
+  <div class="radial-glow"></div>
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+  <div id="ytPlayer" style="display:none;"></div>
+
+  <main>
+    <img class="logo" src="https://i.ibb.co/QFMWxhxj/the-Logo-vide2.png" alt="Bizingue Logo" />
+    <p class="tagline">
+      <span class="orange">Techno</span> ·
+      <span class="orange">DnB</span> ·
+      <span class="orange">Trance</span>
+    </p>
+
+    <div class="divider divider-cyan"></div>
+    <div class="audio-bars" id="audioBars"></div>
+    <div class="divider divider-amber"></div>
+
+    <p class="citation">
+      <em style="color:rgba(251,146,60,0.7)"><em style="color:rgba(251,146,60,0.7)">
+          <a href="https://www.larousse.fr/dictionnaires/francais/de_bizingue/9690" class="link-highlight"
+            target="_blank">De bizingue</a>
+        </em></em>
+      &nbsp;<span style="color:rgba(103,232,249,0.4)">—</span>&nbsp;
+      <span style="color:rgba(103,232,249,0.4)">\bizɛ̃ɡ\</span>&nbsp;
+      <span style="color:rgba(103,232,249,0.4)">— Locution adverbiale :</span>&nbsp;
+      <em style="color:rgba(103,232,249,0.7)">De biais, de travers.</em>
+    </p>
+
+    <div class="buttons">
+      <!-- Billetterie button links to your shop URL -->
+      <a href="https://tickets.bouvier.family/TLDR/billets26/" class="billetterie pill" target="_blank">
+        <span class="dot"></span>
+        <span>Billetterie — Bientôt disponible</span>
+      </a>
+
+      <!-- Lineup button links to your local lineup.html file -->
+      <a href="lineup.html" class="lineup pill">
+        <span class="dot"></span>
+        <span>Line Up — Bientôt disponible</span>
+      </a>
+    </div>
+
+    <button class="sound-btn" id="soundBtn">▶ Activer le son ambient</button>
+  </main>
+
+  <footer>
+    © Bizingue 2026 — <a href="mailto:info@bizingue.ch" class="footer-email">info@bizingue.ch</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
