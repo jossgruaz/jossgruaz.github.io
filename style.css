@@ -454,7 +454,8 @@ footer {
 }
 
 /* -------------------- RESPONSIVE -------------------- */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    /* Mobile + tablet styles */
     .tagline {
         font-size: 1.8rem;
         letter-spacing: 0.2em;
@@ -491,6 +492,7 @@ footer {
     .buttons a {
         width: 100%;
         text-align: center;
+        display: inline-block; /* Make sure it behaves like a block */
     }
 
     .sound-btn {

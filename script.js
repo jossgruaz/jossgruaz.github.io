@@ -62,34 +62,43 @@ drawParticles();
 
 // Audio bars
 const barsContainer = document.getElementById('audioBars');
-const bars = [];
-for (let i = 0; i < 40; i++) {
-    const bar = document.createElement('div');
-    bar.className = 'bar';
-    bar.style.height = '40%';
-    bar.style.backgroundColor = i % 3 === 0 ? '#fb923c' : '#22d3ee';
-    bar.style.opacity = '0.6';
-    barsContainer.appendChild(bar);
-    bars.push(bar);
-}
-bars.forEach(bar => {
-    const animate = () => {
-        const h = 20 + Math.random() * 80;
-        bar.style.height = h + '%';
-        bar.style.opacity = 0.4 + (h / 100) * 0.6;
-        setTimeout(animate, 400 + Math.random() * 600);
-    };
-    animate();
-});
 
-// YouTube audio
+if (barsContainer) {
+    const bars = [];
+    for (let i = 0; i < 40; i++) {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.style.height = '40%';
+        bar.style.backgroundColor = i % 3 === 0 ? '#fb923c' : '#22d3ee';
+        bar.style.opacity = '0.6';
+        barsContainer.appendChild(bar);
+        bars.push(bar);
+    }
+    bars.forEach(bar => {
+        const animate = () => {
+            const h = 20 + Math.random() * 80;
+            bar.style.height = h + '%';
+            bar.style.opacity = 0.4 + (h / 100) * 0.6;
+            setTimeout(animate, 400 + Math.random() * 600);
+        };
+        animate();
+    });
+}
+
+// -------------------- YouTube Audio --------------------
 let ytPlayer;
 let isPlaying = false;
+
+// Load YouTube IFrame API
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 document.body.appendChild(tag);
 
+// Function called by YouTube API when ready
 function onYouTubeIframeAPIReady() {
+    const ytElement = document.getElementById('ytPlayer');
+    if (!ytElement) return; // only create player if the element exists
+
     ytPlayer = new YT.Player('ytPlayer', {
         height: '0',
         width: '0',
@@ -98,18 +107,26 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-document.getElementById('soundBtn').addEventListener('click', () => {
-    const btn = document.getElementById('soundBtn');
-    if (!ytPlayer) return;
-    if (isPlaying) {
-        ytPlayer.pauseVideo();
-        btn.textContent = "▶ Activer le son ambient";
-        btn.classList.remove('playing');
-        isPlaying = false;
-    } else {
-        ytPlayer.playVideo();
-        btn.textContent = "■ Arrêter le son";
-        btn.classList.add('playing');
-        isPlaying = true;
+// Wait until DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const soundBtn = document.getElementById('soundBtn');
+
+    // Only attach click listener if the button exists
+    if (soundBtn) {
+        soundBtn.addEventListener('click', () => {
+            if (!ytPlayer) return;
+
+            if (isPlaying) {
+                ytPlayer.pauseVideo();
+                soundBtn.textContent = "▶ Activer le son ambient";
+                soundBtn.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                ytPlayer.playVideo();
+                soundBtn.textContent = "■ Arrêter le son";
+                soundBtn.classList.add('playing');
+                isPlaying = true;
+            }
+        });
     }
 });
