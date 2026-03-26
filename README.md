@@ -43,6 +43,12 @@ The homepage adapts to all screen sizes:
 3. Use the **skip button** to move to the next track (only works while music is playing).  
 4. Navigate to the **lineup** and **ticketing pages** for full event information.
 
+## Links
+
+- [Event Homepage](https://jossgruaz.github.io)
+- [Tickets / Billetterie](https://tickets.bouvier.family/TLDR/billets26/)
+- [Lineup Page](https://jossgruaz.github.io/lineup.html)
+
 ## Technologies
 
 - HTML5 / CSS3  
