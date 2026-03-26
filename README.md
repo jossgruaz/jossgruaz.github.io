@@ -35,7 +35,6 @@ The homepage adapts to all screen sizes:
 - Additional info like schedules, locations, and social media links.
 
 ### Modern JavaScript Features
-- **YouTube IFrame API** integration for seamless audio playback.  
 - Custom playlist controls with reliable skip/play behavior.  
 - Optimized animations for smooth performance on all devices.
 
