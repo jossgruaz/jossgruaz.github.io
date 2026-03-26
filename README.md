@@ -4,14 +4,17 @@ This is the official homepage for our upcoming event, showcasing the lineup, mus
 
 ## Features
 
-### YouTube Music Playlist
+### Music Playlist
 The site includes an ambient music player with the following tracks:
 
 1. **Full Belly - Cera Khin**  
 2. **Collision - Audio**  
-3. **Creeds - Push Up**  
-4. **GLM - Run It Back Twice**  
-5. **PLASTIKMAN - Ask Yourself**  
+3. **Push Up - Luninatix Remix**  
+4. **Run It Back Twice - GLM**  
+5. **Plastikman - Ask Yourself**  
+
+The playlist is available on: 
+[Spotify playlist](https://open.spotify.com/playlist/6kHIFozXP9dWXhPlQxhXkz?si=8WNgeImyT2iMn18yPygFaA) 
 
 Users can **play/pause** the music and **skip tracks** while a song is playing.
 
