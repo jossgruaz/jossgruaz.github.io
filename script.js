@@ -132,7 +132,6 @@ function playNextTrack() {
     if (!ytPlayer) return;
     currentTrack = (currentTrack + 1) % playlist.length;
     ytPlayer.loadVideoById(playlist[currentTrack]);
-    if (isPlaying) ytPlayer.playVideo();
 }
 
 // DOM Loaded
@@ -161,13 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Skip button
     if (skipBtn) {
         skipBtn.addEventListener('click', () => {
-            if (!ytPlayer || !isPlaying) return; // skip only works if playing
+            if (!ytPlayer) return;
 
             currentTrack = (currentTrack + 1) % playlist.length;
 
-            // Load next video, then play explicitly
-            ytPlayer.cueVideoById(playlist[currentTrack]);  // load without auto-playing
-            ytPlayer.playVideo();                            // then play
+            ytPlayer.loadVideoById(playlist[currentTrack]);
+
+            isPlaying = true; // ensure state stays consistent
         });
     }
 });
