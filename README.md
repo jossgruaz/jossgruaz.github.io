@@ -38,7 +38,7 @@ The homepage adapts to all screen sizes:
 
 ## Usage
 
-1. Visit the homepage: `[jossgruaz.github.io]`.  
+1. Visit the homepage: [Jossgruaz Homepage](https://jossgruaz.github.io).  
 2. Use the **sound button** to play or pause ambient music.  
 3. Use the **skip button** to move to the next track (only works while music is playing).  
 4. Navigate to the **lineup** and **ticketing pages** for full event information.
