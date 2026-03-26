@@ -13,7 +13,7 @@ The site includes an ambient music player with the following tracks:
 4. **Run It Back Twice - GLM**  
 5. **Plastikman - Ask Yourself**  
 
-The playlist is available on: 
+The playlist is available here: 
 [Spotify playlist](https://open.spotify.com/playlist/6kHIFozXP9dWXhPlQxhXkz?si=8WNgeImyT2iMn18yPygFaA) 
 
 Users can **play/pause** the music and **skip tracks** while a song is playing.

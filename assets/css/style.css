@@ -546,3 +546,65 @@ footer {
         letter-spacing: 0.15em;
     }
 }
+
+/* For the giggles */
+
+.team-hierarchy {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #22d3ee;
+  margin-bottom: 40px;
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.node {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(34,211,238,0.2);
+  border-radius: 16px;
+  padding: 15px;
+  width: 160px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.node:hover {
+  transform: translateY(-5px);
+  border-color: #22d3ee;
+}
+
+.node img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.node h3 {
+  font-size: 18px;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.node p {
+  font-size: 15px;
+  color: #fb923c;
+}
