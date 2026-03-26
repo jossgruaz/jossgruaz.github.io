@@ -240,6 +240,34 @@ main {
     /* subtle lift */
 }
 
+.audio-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.skip-btn {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    color: rgba(34, 211, 238, 0.4);
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    cursor: pointer;
+    
+}
+
+.skip-btn:hover {
+    color: #22d3ee;
+    border-color: #22d3ee;
+    transform: scale(1.05);
+}
+
 /* -------------------- FOOTER -------------------- */
 footer {
     position: fixed;

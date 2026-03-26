@@ -1,4 +1,3 @@
-
 // Particles
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
@@ -84,38 +83,67 @@ if (barsContainer) {
         animate();
     });
 }
-
-// -------------------- YouTube Audio --------------------
+// -------------------- YouTube Audio Playlist --------------------
 let ytPlayer;
 let isPlaying = false;
+
+// Playlist
+const playlist = [
+    'yoJ2ogB3fgY', // Full Belly - Cera Khin
+    'geGdGoRXv5s', // Collision - Audio
+    '9revzh8i_wc', // Creeds - Push Up
+    'plOdzZXn3CU', // GLM - Run It Back Twice
+    'h8kwGackUzI'  // PLASTIKMAN - Ask Yourself 
+];
+
+let currentTrack = 0;
 
 // Load YouTube IFrame API
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 document.body.appendChild(tag);
 
-// Function called by YouTube API when ready
 function onYouTubeIframeAPIReady() {
-    const ytElement = document.getElementById('ytPlayer');
-    if (!ytElement) return; // only create player if the element exists
-
     ytPlayer = new YT.Player('ytPlayer', {
         height: '0',
         width: '0',
-        videoId: 'yoJ2ogB3fgY',
-        playerVars: { autoplay: 0, controls: 0, modestbranding: 1, loop: 1, playlist: 'yoJ2ogB3fgY' }
+        videoId: playlist[currentTrack],
+        playerVars: {
+            autoplay: 0,
+            controls: 0,
+            modestbranding: 1,
+            loop: 0
+        },
+        events: {
+            'onStateChange': onPlayerStateChange
+        }
     });
 }
 
-// Wait until DOM is fully loaded
+// When video ends, play next track
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+        playNextTrack();
+    }
+}
+
+// Play next track
+function playNextTrack() {
+    if (!ytPlayer) return;
+    currentTrack = (currentTrack + 1) % playlist.length;
+    ytPlayer.loadVideoById(playlist[currentTrack]);
+    if (isPlaying) ytPlayer.playVideo();
+}
+
+// DOM Loaded
 document.addEventListener('DOMContentLoaded', () => {
     const soundBtn = document.getElementById('soundBtn');
+    const skipBtn = document.getElementById('skipBtn');
 
-    // Only attach click listener if the button exists
+    // Play / pause
     if (soundBtn) {
         soundBtn.addEventListener('click', () => {
             if (!ytPlayer) return;
-
             if (isPlaying) {
                 ytPlayer.pauseVideo();
                 soundBtn.textContent = "▶ Activer le son ambient";
@@ -126,6 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 soundBtn.textContent = "■ Arrêter le son";
                 soundBtn.classList.add('playing');
                 isPlaying = true;
+            }
+        });
+    }
+
+    // Skip button
+    if (skipBtn) {
+        skipBtn.addEventListener('click', () => {
+            if (isPlaying) {   // Only skip if currently playing
+                playNextTrack();
             }
         });
     }
