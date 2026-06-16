@@ -155,7 +155,8 @@ main {
 
 /* -------------------- LINKS -------------------- */
 .billetterie,
-.lineup {
+.lineup,
+.team {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -170,7 +171,8 @@ main {
 }
 
 .billetterie:hover,
-.lineup:hover {
+.lineup:hover,
+.team:hover {
     background-color: rgba(251, 146, 60, 0.15);
     /* slightly brighter */
     border-color: rgba(251, 146, 60, 0.6);
@@ -189,7 +191,8 @@ main {
 }
 
 .billetterie span,
-.lineup span {
+.lineup span,
+.team span {
     font-family: 'Share Tech Mono', monospace;
     color: #fcd34d;
     font-size: 1.25rem;
@@ -259,7 +262,7 @@ main {
     border-radius: 9999px;
     transition: all 0.3s;
     cursor: pointer;
-    
+
 }
 
 .skip-btn:hover {
@@ -300,6 +303,27 @@ footer {
 }
 
 /* -------------------- LINEUP -------------------- */
+.old-banner {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    padding: 0.8rem 1rem;
+
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: rgba(251, 146, 60, 0.9);
+    background: rgba(251, 146, 60, 0.08);
+    border: 1px solid rgba(251, 146, 60, 0.25);
+
+    text-align: center;
+    border-radius: 12px;
+
+    backdrop-filter: blur(6px);
+}
+
 .lineup-list {
     width: 100%;
     max-width: 700px;
@@ -483,6 +507,7 @@ footer {
 
 /* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 768px) {
+
     /* Mobile + tablet styles */
     .tagline {
         font-size: 1.8rem;
@@ -520,7 +545,8 @@ footer {
     .buttons a {
         width: 100%;
         text-align: center;
-        display: inline-block; /* Make sure it behaves like a block */
+        display: inline-block;
+        /* Make sure it behaves like a block */
     }
 
     .sound-btn {
@@ -550,61 +576,61 @@ footer {
 /* For the giggles */
 
 .team-hierarchy {
-  text-align: center;
-  margin-top: 60px;
+    text-align: center;
+    margin-top: 60px;
 }
 
 .section-title {
-  font-family: 'Orbitron', sans-serif;
-  color: #22d3ee;
-  margin-bottom: 40px;
+    font-family: 'Orbitron', sans-serif;
+    color: #22d3ee;
+    margin-bottom: 40px;
 }
 
 .tree {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .node {
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(34,211,238,0.2);
-  border-radius: 16px;
-  padding: 15px;
-  width: 160px;
-  backdrop-filter: blur(6px);
-  transition: 0.3s;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 16px;
+    padding: 15px;
+    width: 160px;
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
 }
 
 .node:hover {
-  transform: translateY(-5px);
-  border-color: #22d3ee;
+    transform: translateY(-5px);
+    border-color: #22d3ee;
 }
 
 .node img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
 }
 
 .node h3 {
-  font-size: 18px;
-  color: #fff;
-  margin: 5px 0;
+    font-size: 18px;
+    color: #fff;
+    margin: 5px 0;
 }
 
 .node p {
-  font-size: 15px;
-  color: #fb923c;
+    font-size: 15px;
+    color: #fb923c;
 }
