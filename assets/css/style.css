@@ -140,6 +140,36 @@ main {
     justify-content: center;
     align-items: center;
 }
+.secondary-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0.85;
+}
+
+/* make it visually secondary */
+.secondary-cta .team {
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    background: rgba(34, 211, 238, 0.05);
+    color: rgba(34, 211, 238, 0.8);
+    font-size: 0.9rem;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+/* hover still feels interactive but subtle */
+.secondary-cta .team:hover {
+    background: rgba(34, 211, 238, 0.12);
+    border-color: rgba(34, 211, 238, 0.5);
+    transform: scale(0.98) translateY(-2px);
+}
+
+/* make text slightly less dominant than main buttons */
+.secondary-cta .team span {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: rgba(103, 232, 249, 0.7);
+}
 
 /* -------------------- CITATIONS -------------------- */
 .citation {
