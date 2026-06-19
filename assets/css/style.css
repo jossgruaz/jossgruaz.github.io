@@ -137,65 +137,66 @@ main {
 .event-info {
     font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
-    line-height: 1.9;    max-width: 850px;
+    line-height: 1.9;
+    max-width: 850px;
     margin: 70px auto 0;
     padding: 40px;
-    border: 1px solid rgba(103,232,249,.25);
-    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(103, 232, 249, .25);
+    background: rgba(255, 255, 255, .03);
     backdrop-filter: blur(10px);
     border-radius: 18px;
     text-align: left;
     line-height: 1.8;
 }
 
-.event-info h2{
-    text-align:center;
-    color:#67e8f9;
-    margin-bottom:10px;
-    font-family:Orbitron,sans-serif;
-    font-size:2rem;
+.event-info h2 {
+    text-align: center;
+    color: #67e8f9;
+    margin-bottom: 10px;
+    font-family: Orbitron, sans-serif;
+    font-size: 2rem;
 }
 
-.event-details{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:12px;
-    margin:30px 0;
-    color:#fb923c;
-    font-weight:600;
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 30px 0;
+    color: #fb923c;
+    font-weight: 600;
 }
 
-.event-info h3{
-    color:#fb923c;
-    margin-top:35px;
-    margin-bottom:10px;
-    font-family:Orbitron,sans-serif;
+.event-info h3 {
+    color: #fb923c;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-family: Orbitron, sans-serif;
 }
 
-.event-info p{
-    color:#ddd;
-    margin:14px 0;
+.event-info p {
+    color: #ddd;
+    margin: 14px 0;
 }
 
-.event-info strong{
-    color:#67e8f9;
+.event-info strong {
+    color: #67e8f9;
 }
 
-.event-info a{
-    color:#67e8f9;
+.event-info a {
+    color: #67e8f9;
 }
 
-.event-info hr{
-    border:none;
-    border-top:1px solid rgba(103,232,249,.2);
-    margin:35px 0;
+.event-info hr {
+    border: none;
+    border-top: 1px solid rgba(103, 232, 249, .2);
+    margin: 35px 0;
 }
 
-.warning{
-    text-align:center;
-    color:#fb923c;
-    font-weight:bold;
-    font-size:1.05rem;
+.warning {
+    text-align: center;
+    color: #fb923c;
+    font-weight: bold;
+    font-size: 1.05rem;
 }
 
 /* -------------------- BUTTONS -------------------- */
@@ -205,6 +206,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 .secondary-cta {
     margin-top: 2.5rem;
     display: flex;
@@ -728,4 +730,244 @@ footer {
 .node p {
     font-size: 15px;
     color: #fb923c;
+}
+
+/* ==========================================================
+   INFORMATION MODAL (UPDATED)
+   ========================================================== */
+
+/* Info button (unchanged) */
+.info-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    border-radius: 9999px;
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    background: rgba(251, 146, 60, 0.05);
+
+    color: inherit;
+    text-decoration: none;
+
+    font-family: inherit;
+    cursor: pointer;
+
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 1.5s forwards;
+
+    transition:
+        background-color .25s,
+        border-color .25s,
+        transform .25s;
+}
+
+.info-btn:hover {
+    background-color: rgba(251, 146, 60, .15);
+    border-color: rgba(251, 146, 60, .6);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.info-btn span {
+    font-family: 'Share Tech Mono', monospace;
+    color: #fcd34d;
+    font-size: 1.25rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+/* =========================
+   MODAL BACKDROP
+   ========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .35s ease;
+
+    z-index: 9999;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   MODAL CARD
+   ========================= */
+
+.modal-content {
+    position: relative; /* needed for close button */
+
+    width: min(900px, 95vw);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: rgba(10, 15, 20, .96);
+
+    border: 1px solid rgba(103, 232, 249, .25);
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 30px rgba(34, 211, 238, .18),
+        0 0 80px rgba(34, 211, 238, .06);
+
+    padding: 32px 40px 32px 32px; /* extra right padding for scrollbar */
+
+    transform: translateY(25px) scale(.97);
+
+    transition: .35s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+/* =========================
+   CLOSE BUTTON (TOP RIGHT)
+   ========================= */
+
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    margin-bottom: 0;
+
+    background: transparent;
+
+    border: 1px solid rgba(103, 232, 249, .25);
+    border-radius: 999px;
+
+    padding: 8px 18px;
+
+    color: #67e8f9;
+
+    font-family: 'Share Tech Mono', monospace;
+    font-size: .9rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.close-modal:hover {
+    color: #fb923c;
+    border-color: rgba(251, 146, 60, .5);
+    background: rgba(251, 146, 60, .08);
+}
+
+/* =========================
+   CONTENT RESET
+   ========================= */
+
+.modal .event-info {
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    max-width: none;
+
+    backdrop-filter: none;
+}
+
+/* =========================
+   SCROLLBAR (FIXED)
+   ========================= */
+
+.modal-content::-webkit-scrollbar {
+    width: 5px; /* smaller scrollbar */
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px 0; /* prevents edge sticking effect */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, .25);
+    border-radius: 999px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(34, 211, 238, .4);
+}
+
+/* Firefox support */
+.modal-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(34, 211, 238, .35) transparent;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width:768px) {
+
+    .modal {
+        padding: 18px;
+    }
+
+    .modal-content {
+        width: 100%;
+        max-height: 95vh;
+        padding: 24px 36px 24px 24px;
+    }
+
+    .close-modal {
+        top: 12px;
+        right: 12px;
+    }
+
+    .info-btn span {
+        font-size: .85rem;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}
+
+body.ticket-page main {
+    gap: 1rem;
+}
+
+body.ticket-page #pretix-widget-container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+body.ticket-page .pretix-widget,
+body.ticket-page iframe {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+body.ticket-page .divider-amber {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+body.ticket-page .ticket-bottom {
+    margin-top: 0.5rem;
 }

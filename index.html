@@ -1,90 +1,137 @@
-
 <!-- Bizingue.ch -->
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bizingue</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bizingue</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
-    rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
 
-  <!-- Your external CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-  <canvas id="particles"></canvas>
-  <div class="radial-glow"></div>
-  <div class="corner corner-tl"></div>
-  <div class="corner corner-tr"></div>
-  <div class="corner corner-bl"></div>
-  <div class="corner corner-br"></div>
 
-  <audio id="audioPlayer"></audio>
+    <canvas id="particles"></canvas>
+    <div class="radial-glow"></div>
 
-  <main>
-    <img class="logo" src="assets/img/theLogo_vide2.png" alt="Bizingue Logo" />
-    <p class="tagline">
-      <span class="orange">Techno</span>
-      <span class="separator">·</span>
-      <span class="orange">DnB</span>
-      <span class="separator">·</span>
-      <span class="orange">Trance</span>
-    </p>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
 
-    <div class="divider divider-cyan"></div>
-    <div class="audio-bars" id="audioBars"></div>
-    <div class="divider divider-amber"></div>
+    <audio id="audioPlayer"></audio>
 
-    <p class="citation">
-      <em style="color:rgba(251,146,60,0.7)"><em style="color:rgba(251,146,60,0.7)">
-          <a href="https://www.larousse.fr/dictionnaires/francais/de_bizingue/9690" class="link-highlight"
-            target="_blank">De bizingue</a>
-        </em></em>
-      &nbsp;<span style="color:rgba(103,232,249,0.4)">—</span>&nbsp;
-      <span style="color:rgba(103,232,249,0.4)">\bizɛ̃ɡ\</span>&nbsp;
-      <span style="color:rgba(103,232,249,0.4)">— Locution adverbiale :</span>&nbsp;
-      <em style="color:rgba(103,232,249,0.7)">De biais, de travers.</em>
-    </p>
+    <main>
 
-    <div class="buttons">
-      <a href="billetterie.html" class="billetterie pill" target="_blank">
-        <span class="dot"></span>
-        <span>Billetterie</span>
-      </a>
+        <img class="logo" src="assets/img/theLogo_vide2.png" alt="Bizingue Logo" />
 
-      <a href="lineup.html" class="lineup pill">
-        <span class="dot"></span>
-        <span>Line Up — Bientôt disponible</span>
-      </a>
-    </div>
+        <p class="tagline">
+            <span class="orange">Techno</span>
+            <span class="separator">·</span>
+            <span class="orange">DnB</span>
+            <span class="separator">·</span>
+            <span class="orange">Trance</span>
+        </p>
 
-    <!-- Easter egg -->
-    <!--
+        <div class="divider divider-cyan"></div>
+
+        <div class="audio-bars" id="audioBars"></div>
+
+        <div class="divider divider-amber"></div>
+
+        <p class="citation">
+            <a href="https://www.larousse.fr/dictionnaires/francais/de_bizingue/9690" class="link-highlight"
+                target="_blank">
+                De bizingue
+            </a>
+
+            &nbsp;
+            <span style="color:rgba(103,232,249,.4)">—</span>
+            &nbsp;
+
+            <span style="color:rgba(103,232,249,.4)">\bizɛ̃ɡ\</span>
+
+            &nbsp;
+
+            <span style="color:rgba(103,232,249,.4)">
+                — Locution adverbiale :
+            </span>
+
+            &nbsp;
+
+            <em style="color:rgba(103,232,249,.7)">
+                De biais, de travers.
+            </em>
+
+        </p>
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <button id="infoBtn" class="pill info-btn">
+                <span class="dot"></span>
+                <span>Informations</span>
+            </button>
+
+            <a href="billetterie.html" class="billetterie pill" target="_blank">
+
+                <span class="dot"></span>
+                <span>Billetterie</span>
+
+            </a>
+
+            <a href="lineup.html" class="lineup pill">
+
+                <span class="dot"></span>
+                <span>Line Up — Bientôt disponible</span>
+
+            </a>
+
+        </div>
+
+        <!-- Easter egg -->
+
+        <!--
     <div class="secondary-cta">
       <a href="team.html" class="team pill">
         <span class="dot"></span>
         <span>Équipe Bizingue</span>
       </a>
     </div>
-    --->
+    -->
 
+        <div class="audio-controls">
 
-    <div class="audio-controls">
-      <button class="sound-btn" id="soundBtn">&#9654; Activer le son ambient</button>
-      <button class="sound-btn" id="skipBtn">&#9654;&#9654;</button>
-    </div>
+            <button class="sound-btn" id="soundBtn">
+                ▶ Activer le son ambient
+            </button>
 
-  </main>
+            <button class="sound-btn" id="skipBtn">
+                ▶▶
+            </button>
 
-  <footer>
-    © Bizingue 2026 — <a href="mailto:info@bizingue.ch" class="footer-email">info@bizingue.ch</a>
-  </footer>
-  <script src="assets/js/script.js"></script>
+        </div>
+
+    </main>
+
+    <!-- INFORMATION MODAL (loaded dynamically) -->
+    <div id="modal-container"></div>
+
+    <footer>
+        © Bizingue 2026 —
+        <a href="mailto:info@bizingue.ch" class="footer-email">
+            info@bizingue.ch
+        </a>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
