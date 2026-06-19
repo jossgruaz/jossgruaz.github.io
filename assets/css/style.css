@@ -627,55 +627,91 @@ footer {
     }
 }
 
-/* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 768px) {
 
-    /* Mobile + tablet styles */
+    /* -------------------- TAGLINE -------------------- */
     .tagline {
         font-size: 1.8rem;
         letter-spacing: 0.2em;
         text-align: center;
-        /* optional but looks better */
     }
 
-    /* Each word on its own line */
     .tagline span {
         display: block;
         margin: 5px 0;
-        /* spacing between lines */
     }
 
-    /* Hide the dots */
     .separator {
         display: none;
     }
 
+    /* -------------------- LINEUP DAY -------------------- */
     .lineup-day {
         font-size: 2rem;
     }
 
+    /* -------------------- BUTTONS (MAIN FIX) -------------------- */
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .buttons a,
+    .buttons button {
+        width: 100%;
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* ensure icon + text stay centered */
+    .billetterie,
+    .lineup,
+    .info-btn {
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* -------------------- DOT FIX -------------------- */
+    .dot {
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+        opacity: 1;
+        box-shadow: 0 0 6px rgba(251, 146, 60, 0.6);
+    }
+
+    /* -------------------- BUTTON TEXT -------------------- */
     .billetterie span,
     .lineup span {
         font-size: 0.85rem;
     }
 
-    .buttons {
-        flex-direction: column;
-        width: 100%;
+    .info-btn span {
+        font-size: 0.85rem;
     }
 
-    .buttons a {
-        width: 100%;
+    .billetterie span,
+    .lineup span,
+    .info-btn span {
         text-align: center;
-        display: inline-block;
-        /* Make sure it behaves like a block */
+        width: 100%;
+        line-height: 1.2;
     }
 
+    /* -------------------- SOUND BUTTON -------------------- */
     .sound-btn {
         font-size: 14px;
         padding: 8px 16px;
     }
 
+    /* -------------------- LINEUP TEXT -------------------- */
     .lineup-list h3 {
         font-size: 1.6rem;
     }
@@ -689,6 +725,7 @@ footer {
         margin-bottom: 1.5rem;
     }
 
+    /* -------------------- FOOTER -------------------- */
     footer {
         font-size: 14px;
         letter-spacing: 0.15em;
