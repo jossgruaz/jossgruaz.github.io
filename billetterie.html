@@ -1,3 +1,4 @@
+
 <!-- Billetterie  -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -8,14 +9,14 @@
     <title>Bizingue - Billetterie</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- Pretix Widget code -->
     <!-- DOCU : https://docs.pretix.eu/guides/widget/ -->
 
     <link rel="stylesheet" type="text/css"
-        href="https://tickets.bouvier.family/TLDR/billets26/widget/v2.css" crossorigin>
-    <script type="text/javascript" src="https://tickets.bouvier.family/widget/v2.fr.js" crossorigin></script>
+        href="https://shop.bizingue.ch/widget/v2.css" crossorigin>
+    <script type="text/javascript" src="https://shop.bizingue.ch/widget/v2.fr.js" crossorigin></script>
 
     <style>
         /* Optional container styling for Pretix widget */
@@ -41,13 +42,11 @@
         Doesn't work on local host or github.io-->
 
         <div id="pretix-widget-container">
-            <pretix-widget event="https://tickets.bouvier.family/TLDR/billets26/"></pretix-widget>
+            <pretix-widget event="https://shop.bizingue.ch"></pretix-widget>
             <noscript>
                 <div class="pretix-widget">
                     <div class="pretix-widget-info-message">
-                        JavaScript is disabled in your browser. To access our ticket shop without JavaScript, please <a
-                            target="_blank" rel="noopener" href="https://tickets.bouvier.family/TLDR/billets26/">click
-                            here</a>.
+                        JavaScript is disabled in your browser. To access our ticket shop without JavaScript, please <a target="_blank" rel="noopener" href="https://shop.bizingue.ch/TLDR/billets26/">clickhere</a>.
                     </div>
                 </div>
             </noscript>
@@ -65,7 +64,7 @@
 
     <footer>© Bizingue 2026 - <a href="mailto:info@bizingue.ch" class="footer-email">info@bizingue.ch</a></footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

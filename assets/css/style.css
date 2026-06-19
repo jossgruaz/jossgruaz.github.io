@@ -133,6 +133,71 @@ main {
     transition: height 0.15s ease, opacity 0.15s ease;
 }
 
+/* -------------------- Event info -------------------- */
+.event-info {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.9;    max-width: 850px;
+    margin: 70px auto 0;
+    padding: 40px;
+    border: 1px solid rgba(103,232,249,.25);
+    background: rgba(255,255,255,.03);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+.event-info h2{
+    text-align:center;
+    color:#67e8f9;
+    margin-bottom:10px;
+    font-family:Orbitron,sans-serif;
+    font-size:2rem;
+}
+
+.event-details{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    margin:30px 0;
+    color:#fb923c;
+    font-weight:600;
+}
+
+.event-info h3{
+    color:#fb923c;
+    margin-top:35px;
+    margin-bottom:10px;
+    font-family:Orbitron,sans-serif;
+}
+
+.event-info p{
+    color:#ddd;
+    margin:14px 0;
+}
+
+.event-info strong{
+    color:#67e8f9;
+}
+
+.event-info a{
+    color:#67e8f9;
+}
+
+.event-info hr{
+    border:none;
+    border-top:1px solid rgba(103,232,249,.2);
+    margin:35px 0;
+}
+
+.warning{
+    text-align:center;
+    color:#fb923c;
+    font-weight:bold;
+    font-size:1.05rem;
+}
+
 /* -------------------- BUTTONS -------------------- */
 .buttons {
     display: flex;
