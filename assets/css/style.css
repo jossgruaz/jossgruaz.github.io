@@ -666,14 +666,14 @@ footer {
     .buttons button {
         width: 100%;
         text-align: center;
-        display: inline-block;
+        /* Remove display: inline-block from here so it doesn't conflict */
     }
 
-    /* ensure buttons behave properly as flex items */
-    .billetterie,
-    .lineup,
-    .team,
-    .info-btn {
+    /* Target them through the parent to ensure high specificity */
+    .buttons .billetterie,
+    .buttons .lineup,
+    .buttons .team,
+    .buttons .info-btn {
         display: flex;
         align-items: center;
         justify-content: center;
