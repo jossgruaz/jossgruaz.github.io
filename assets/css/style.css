@@ -159,11 +159,36 @@ main {
 
 .event-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-    margin: 30px 0;
+
+    /* keep responsive behavior but force stable alignment */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 16px 24px;
+
+    max-width: 700px;
+    margin: 30px auto;
+
     color: #fb923c;
     font-weight: 600;
+
+    justify-items: start; /* IMPORTANT: prevents uneven centering */
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    justify-content: flex-start; /* was center → caused misalignment feel */
+    text-align: left;
+}
+
+.event-col {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .event-info h3 {
@@ -971,3 +996,37 @@ body.ticket-page .divider-amber {
 body.ticket-page .ticket-bottom {
     margin-top: 0.5rem;
 }
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.info-row-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    border: 1px solid rgba(251, 146, 60, 0.25);
+    background: rgba(251, 146, 60, 0.05);
+
+    color: #fb923c; /* your orange accent */
+}
+
+.info-row-icon span {
+    font-size: 16px;
+    color: #fb923c;
+}
+
+/* text side */
+.info-row p {
+    margin: 0;
+    color: rgba(103, 232, 249, 0.85); /* cyan theme */
+    font-family: 'Share Tech Mono', monospace;
+}
+
