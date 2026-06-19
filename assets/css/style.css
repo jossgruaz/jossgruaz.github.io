@@ -171,7 +171,8 @@ main {
     color: #fb923c;
     font-weight: 600;
 
-    justify-items: start; /* IMPORTANT: prevents uneven centering */
+    justify-items: start;
+    /* IMPORTANT: prevents uneven centering */
 }
 
 .info-row {
@@ -179,7 +180,8 @@ main {
     align-items: center;
     gap: 10px;
 
-    justify-content: flex-start; /* was center → caused misalignment feel */
+    justify-content: flex-start;
+    /* was center → caused misalignment feel */
     text-align: left;
 }
 
@@ -310,6 +312,10 @@ main {
     border-radius: 50%;
     background: #fb923c;
     animation: pulseGlow 2s ease-in-out infinite;
+    min-width: 8px;
+    min-height: 8px;
+    flex-shrink: 0;
+    display: inline-block;
 }
 
 .billetterie span,
@@ -650,41 +656,42 @@ footer {
         font-size: 2rem;
     }
 
-    /* -------------------- BUTTONS (MAIN FIX) -------------------- */
+    /* -------------------- BUTTON LAYOUT -------------------- */
     .buttons {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         width: 100%;
-        gap: 0.8rem;
     }
 
     .buttons a,
     .buttons button {
         width: 100%;
-        max-width: 320px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-align: center;
-        gap: 10px;
+        display: inline-block;
     }
 
-    /* ensure icon + text stay centered */
+    /* ensure buttons behave properly as flex items */
     .billetterie,
     .lineup,
+    .team,
     .info-btn {
-        justify-content: center;
+        display: flex;
         align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
     }
 
-    /* -------------------- DOT FIX -------------------- */
+    /* -------------------- DOT FIX (IMPORTANT) -------------------- */
     .dot {
-        width: 10px;
-        height: 10px;
-        flex-shrink: 0;
-        opacity: 1;
-        box-shadow: 0 0 6px rgba(251, 146, 60, 0.6);
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
+        min-height: 8px;
+        flex: 0 0 8px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background: #fb923c;
+        animation: pulseGlow 2s ease-in-out infinite;
+        display: inline-block;
     }
 
     /* -------------------- BUTTON TEXT -------------------- */
@@ -697,11 +704,13 @@ footer {
         font-size: 0.85rem;
     }
 
+    /* IMPORTANT FIX: prevents span from stretching layout */
     .billetterie span,
     .lineup span,
+    .team span,
     .info-btn span {
         text-align: center;
-        width: 100%;
+        width: auto;
         line-height: 1.2;
     }
 
@@ -873,7 +882,8 @@ footer {
    ========================= */
 
 .modal-content {
-    position: relative; /* needed for close button */
+    position: relative;
+    /* needed for close button */
 
     width: min(900px, 95vw);
     max-height: 90vh;
@@ -889,7 +899,8 @@ footer {
         0 0 30px rgba(34, 211, 238, .18),
         0 0 80px rgba(34, 211, 238, .06);
 
-    padding: 32px 40px 32px 32px; /* extra right padding for scrollbar */
+    padding: 32px 40px 32px 32px;
+    /* extra right padding for scrollbar */
 
     transform: translateY(25px) scale(.97);
 
@@ -957,12 +968,14 @@ footer {
    ========================= */
 
 .modal-content::-webkit-scrollbar {
-    width: 5px; /* smaller scrollbar */
+    width: 5px;
+    /* smaller scrollbar */
 }
 
 .modal-content::-webkit-scrollbar-track {
     background: transparent;
-    margin: 10px 0; /* prevents edge sticking effect */
+    margin: 10px 0;
+    /* prevents edge sticking effect */
 }
 
 .modal-content::-webkit-scrollbar-thumb {
@@ -1052,7 +1065,8 @@ body.ticket-page .ticket-bottom {
     border: 1px solid rgba(251, 146, 60, 0.25);
     background: rgba(251, 146, 60, 0.05);
 
-    color: #fb923c; /* your orange accent */
+    color: #fb923c;
+    /* your orange accent */
 }
 
 .info-row-icon span {
@@ -1063,7 +1077,7 @@ body.ticket-page .ticket-bottom {
 /* text side */
 .info-row p {
     margin: 0;
-    color: rgba(103, 232, 249, 0.85); /* cyan theme */
+    color: rgba(103, 232, 249, 0.85);
+    /* cyan theme */
     font-family: 'Share Tech Mono', monospace;
 }
-
